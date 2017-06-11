@@ -1,4 +1,5 @@
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	  xmlns:th="http://www.thymeleaf.org">
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" />
 
@@ -9,7 +10,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
-<form class="form-horizontal">
+<form th:object="${account}" th:action="@{save}"  class="form-horizontal">
 	<fieldset>
 
 		<!-- Form Name -->
@@ -19,14 +20,14 @@
 		<div class="form-group">
 			<label class="col-md-4 control-label" for="idNome">Nome</label>
 			<div class="col-md-5">
-				<input id="idNome" name="idNome" type="text" placeholder="Nome do usuaário" class="form-control input-md" required="" />
+				<input id="idNome" th:field="*{name}"  type="text" placeholder="Nome do usuaário" class="form-control input-md" required="" />
 
 			</div>
 		</div>
 		<div class="form-group">
 			<label class="col-md-4 control-label" for="idNome">Email</label>
 			<div class="col-md-5">
-				<input id="idNome" name="idNome" type="text" placeholder="Email" class="form-control input-md" required="" />
+				<input id="idNome" th:field="*{email}"  type="text" placeholder="Email" class="form-control input-md" required="" />
 
 			</div>
 		</div>
@@ -35,7 +36,7 @@
 		<div class="form-group">
 			<label class="col-md-4 control-label" for="idDepto">Cidade</label>
 			<div class="col-md-5">
-				<input id="idDepto" name="idDepto" type="text" placeholder="Cidade" class="form-control input-md" required="" />
+				<input id="idDepto"  th:field="*{city}"  type="text" placeholder="Cidade" class="form-control input-md" required="" />
 
 			</div>
 		</div>
@@ -44,7 +45,7 @@
 		<div class="form-group">
 			<label class="col-md-4 control-label" for="idUsuario">Usuário</label>
 			<div class="col-md-5">
-				<input id="idUsuario" name="idUsuario" type="text" placeholder="Login do usuario" class="form-control input-md" required="" />
+				<input id="idUsuario"  th:field="*{user}" type="text" placeholder="Login do usuario" class="form-control input-md" required="" />
 
 			</div>
 		</div>
@@ -53,7 +54,7 @@
 		<div class="form-group">
 			<label class="col-md-4 control-label" for="idSenha">Senha</label>
 			<div class="col-md-5">
-				<input id="idSenha" name="idSenha" type="password" placeholder="Digite a senha" class="form-control input-md" required="" />
+				<input id="idSenha"  th:field="*{password}" type="password" placeholder="Digite a senha" class="form-control input-md" required="" />
 
 			</div>
 		</div>

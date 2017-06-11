@@ -1,6 +1,7 @@
 package com.jardimBotanico.jardimBotanico.domain;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
 /**
@@ -10,6 +11,7 @@ import javax.persistence.Id;
 public class Account {
 
     @Id
+    @GeneratedValue
     private  Long id;
 
     private String name;

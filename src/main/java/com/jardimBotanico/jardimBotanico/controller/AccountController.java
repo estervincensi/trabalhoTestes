@@ -12,7 +12,7 @@ public class AccountController {
 
       @GetMapping("/test")
       public String create() {
-          return "registered";
+          return "register";
       }
 
 }

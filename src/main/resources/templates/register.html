@@ -43,7 +43,7 @@
 
 		<!-- Text input-->
 		<div class="form-group">
-			<label class="col-md-4 control-label" for="idUsuario">Usuário</label>
+			<label class="col-md-4 control-label" for="idUsuario">Usuário</label> <label th:text="${erro}" style="color:red"></label>
 			<div class="col-md-5">
 				<input id="idUsuario"  th:field="*{user}" type="text" placeholder="Login do usuario" class="form-control input-md" required="" />
 

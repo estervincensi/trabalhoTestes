@@ -33,7 +33,11 @@ public class AccountController {
 
     @PostMapping("/save")
     public String save(@Valid Account operador, BindingResult bindingResult, Model model) {
-        this.accountService.save(operador);
+        if(this.accountService.save(operador)==null){
+        	model.addAttribute("erro", "Atenção! usuário já existe!");
+        	model.addAttribute("operador", operador);
+        	return "register";
+        }
         return "redirect:/";
     }
 }

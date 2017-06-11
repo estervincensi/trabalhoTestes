@@ -18,4 +18,8 @@ public class AccountController {
                   .addObject("account", new Account());
       }
 
+    @GetMapping("/save")
+    public void save() {
+      
+    }
 }

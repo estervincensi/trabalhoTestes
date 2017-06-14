@@ -1,0 +1,1 @@
+INSERT INTO  account(id,name,email,city,password,user) values(1,'teste','teste','teste','teste','teste');

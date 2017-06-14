@@ -18,8 +18,12 @@ public class AccountService {
     }
 
 
-    public void save (Account account) {
-         this.accountRepository.save(account);
+    public Account save (Account account) {
+    	Account account2 = accountRepository.findByUser(account.getUser());
+    	if(accountRepository.findByUser(account.getUser())!=null){
+    		return null;
+    	}
+         return this.accountRepository.save(account);
     }
 
 

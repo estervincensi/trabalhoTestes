@@ -33,7 +33,7 @@ public class JardimBotanicoApplicationTests {
 
 	@After
 	public void quitDriver() {
-	//	webDriver.quit();
+		webDriver.quit();
 	}
 
 
@@ -48,6 +48,23 @@ public class JardimBotanicoApplicationTests {
 	public void testCreatedUseMensager() {
 		webDriver.get("http://jardimbotanico.herokuapp.com/");	
 	}
+
+	@Test
+	public void testEmptyValues() {
+		webDriver.get("http://jardimbotanico.herokuapp.com/");	
+	
+
+		WebElement name = webDriver.findElement(By.name("name"));
+		WebElement email = webDriver.findElement(By.name("email"));
+		WebElement city = webDriver.findElement(By.name("city"));
+		WebElement user = webDriver.findElement(By.name("user"));
+		WebElement pas = webDriver.findElement(By.name("password"));
+		
+		user.getAttribute("require");
+		
+		
+	}
+	
 	
 	@Test
 	public void testCanNotCreateduserWithUserExisting() {
